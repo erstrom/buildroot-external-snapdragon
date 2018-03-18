@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_SNAPDRAGON_PATH/package/ath10k-firmware/Config.in"

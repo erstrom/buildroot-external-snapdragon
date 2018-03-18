@@ -1,0 +1,32 @@
+config BR2_PACKAGE_ATH10K_FIRMWARE
+	bool "ath10k-firmware"
+	help
+	  Firmware for the Qualcomm Atheros 802.11ac Wifi devices supported
+	  by the ath10k kernel driver.
+
+if BR2_PACKAGE_ATH10K_FIRMWARE
+
+config BR2_PACKAGE_ATH10K_FIRMWARE_GIT_URL
+        string "GIT URL"
+        default "https://github.com/kvalo/ath10k-firmware.git"
+
+config BR2_PACKAGE_ATH10K_FIRMWARE_GIT_REV
+        string "GIT REV"
+        default "master"
+
+choice
+
+	bool "board"
+
+config BR2_PACKAGE_ATH10K_FIRMWARE_USB_WUSB6100M
+	bool "USB WUSB6100M"
+
+config BR2_PACKAGE_ATH10K_FIRMWARE_USB_SPARKLAN
+	bool "USB SparkLAN"
+
+config BR2_PACKAGE_ATH10K_FIRMWARE_SDIO_SILEX_SDMAC
+	bool "SDIO Silex SDMAC"
+
+endchoice
+
+endif
